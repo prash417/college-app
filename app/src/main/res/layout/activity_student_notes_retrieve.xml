@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Notes.StudentNotesRetrieveActivity"
+    android:background="@color/white">
+
+    <!--    Notes text back btn search btn searchView-->
+    <RelativeLayout
+        android:id="@+id/NotesText"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:background="@color/color3">
+
+        <!--  back btn-->
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_1sdp"
+            android:src="@drawable/back_arrow_icon"
+            android:visibility="visible"/>
+
+        <ImageView
+            android:id="@+id/hideSearchView"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:src="@drawable/back_arrow_icon"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:visibility="gone"/>
+
+        <!--Notes text-->
+        <TextView
+            android:id="@+id/notesText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toStartOf="@+id/ShowSearchView"
+            android:layout_toEndOf="@+id/hideSearchView"
+            android:gravity="center"
+            android:text="Notes"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <!-- search box-->
+        <EditText
+            android:id="@+id/Search"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:hint="Search Notes"
+            android:inputType="textCapSentences"
+            android:padding="@dimen/_8sdp"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textColorHint="@color/greay"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_toStartOf="@+id/ShowSearchView"
+            android:background="@null"
+            android:visibility="gone"
+            />
+
+        <ImageView
+            android:id="@+id/ShowSearchView"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="@dimen/_2sdp"
+            android:src="@drawable/notes_search_icon" />
+
+    </RelativeLayout>
+
+    <!--        sem number-->
+    <RelativeLayout
+        android:id="@+id/semno"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_below="@+id/NotesText"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_8sdp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:hint="Semester"
+            android:textColorHint="@color/greay"
+            app:endIconMode="dropdown_menu"
+            app:endIconTint="@color/black"
+            app:startIconDrawable="@drawable/important_icon"
+            app:startIconTint="@color/black"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            android:layout_centerVertical="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
+
+            <AutoCompleteTextView
+                android:id="@+id/filled_exposed"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_edittext_right"
+                android:inputType="none"
+                android:textColor="@color/black"
+                tools:ignore="SpeakableTextPresentCheck">
+
+            </AutoCompleteTextView>
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </RelativeLayout>
+
+    <!--        semester msg-->
+    <TextView
+        android:id="@+id/semestermsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sem Message"
+        android:textSize="14sp"
+        android:textColor="@color/Red"
+        android:layout_below="@+id/semno"
+        android:layout_marginLeft="@dimen/_24sdp"
+        android:visibility="gone"/>
+
+    <!-- scroll view-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_below="@+id/semestermsg">
+
+        <!-- Notes display-->
+        <ScrollView
+            android:id="@+id/NotesDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="SpeakableTextPresentCheck">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/NotesRecycler"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+    <!--    Animation-->
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="@dimen/_140sdp"
+        android:layout_height="@dimen/_140sdp"
+        android:visibility="gone"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loading"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>

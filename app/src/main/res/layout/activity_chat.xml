@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Chat.ChatActivity"
+    android:background="@color/white">
+
+
+    <!--Student img name and usn-->
+    <RelativeLayout
+        android:id="@+id/marksDisplayText"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:background="@color/color3">
+
+
+        <!--  back btn-->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/UserImage"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:src="@drawable/cardview_person_icon" />
+
+
+        <!--Student name-->
+        <TextView
+            android:id="@+id/uName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Student Name"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_toEndOf="@+id/UserImage"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+    <!-- message display-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="SpeakableTextPresentCheck"
+        android:layout_above="@+id/SelIMGorFile"
+        android:layout_below="@+id/marksDisplayText"
+        android:layout_marginTop="@dimen/_5sdp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/messageRecycler" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!--    selected image or file-->
+    <RelativeLayout
+        android:id="@+id/SelIMGorFile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/messageLayout"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/choosenImg"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:src="@drawable/add_photo_icon"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
+
+        <!--        pdf name-->
+        <RelativeLayout
+            android:id="@+id/PDF_Display"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_6sdp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/FileImg"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:src="@drawable/note_icon"
+                android:padding="@dimen/_2sdp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/_6sdp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/PDF_Name"
+                android:layout_toEndOf="@+id/FileImg"
+                android:layout_centerVertical="true"
+                android:text="File Name"
+                android:letterSpacing="0.02"
+                android:includeFontPadding="false"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/_6sdp"/>
+
+        </RelativeLayout>
+
+        <!--        send image-->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/CloseBTN"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="@dimen/_4sdp"
+            android:src="@drawable/cancel_icon" />
+
+    </RelativeLayout>
+
+    <!--    Message box-->
+    <RelativeLayout
+        android:id="@+id/messageLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <!--        send image-->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/sendbtn"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:src="@drawable/send_icon" />
+
+        <!--        message image pdf-->
+        <RelativeLayout
+            android:id="@+id/MessageBoxLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/sendbtn"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="@drawable/custom_edittext_right">
+
+            <!--Message-->
+            <EditText
+                android:id="@+id/MessageInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:background="@color/trans"
+                android:drawableLeft="@drawable/message_icon_layout"
+                android:drawablePadding="@dimen/_8sdp"
+                android:hint="Message"
+                android:inputType="textMultiLine|textCapSentences"
+                android:maxLength="200"
+                android:maxLines="4"
+                android:padding="@dimen/_8sdp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/greay"
+                android:textSize="20sp" />
+
+
+            <!-- Choose image-->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ChooseIMG"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginEnd="@dimen/_6sdp"
+                android:layout_marginBottom="@dimen/_6sdp"
+                android:src="@drawable/add_photo_icon"
+                android:visibility="visible" />
+
+            <!-- Choose file-->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ChooseFile"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginBottom="@dimen/_6sdp"
+                android:layout_toStartOf="@+id/ChooseIMG"
+                android:src="@drawable/pdf_icon"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

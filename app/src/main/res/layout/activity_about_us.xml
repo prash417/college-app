@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutUs.AboutUsActivity"
+    android:background="@color/white">
+
+    <!-- AboutUs Text and back btn-->
+    <RelativeLayout
+        android:id="@+id/AboutUsText"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_38sdp"
+        android:background="@color/color3"
+        android:gravity="center">
+
+        <!--  back btn-->
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:src="@drawable/back_arrow_icon" />
+
+
+        <!--AboutUs text-->
+        <TextView
+            android:id="@+id/AboutUs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/_1sdp"
+            android:gravity="center"
+            android:text="About Us"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+<!--    College Name and Logo-->
+  <RelativeLayout
+      android:id="@+id/CollegeNameLogo"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/AboutUsText"
+      android:layout_margin="@dimen/_20sdp">
+
+      <ImageView
+          android:id="@+id/JGILogo"
+          android:layout_width="@dimen/_50sdp"
+          android:layout_height="@dimen/_50sdp"
+          android:src="@drawable/jgi" />
+
+      <TextView
+          android:id="@+id/collegeName"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="@dimen/_4sdp"
+          android:layout_marginTop="@dimen/_5sdp"
+          android:layout_toEndOf="@id/JGILogo"
+          android:text="JAIN COLLEGE OF"
+          android:textColor="@color/blue"
+          android:textSize="18sp"
+          android:textStyle="bold" />
+      <TextView
+          android:id="@+id/collegeArea"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="ENGINEERING BELAGAVI"
+          android:textStyle="bold"
+          android:textColor="@color/Yellow"
+          android:textSize="18sp"
+          android:layout_toEndOf="@id/JGILogo"
+          android:layout_below="@id/collegeName"
+          android:layout_marginStart="@dimen/_4sdp"
+          android:layout_centerVertical="true" />
+
+  </RelativeLayout>
+
+<!--    ScrollView for all layouts-->
+    <ScrollView
+        android:id="@+id/allLayoutScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/CollegeNameLogo"
+        android:layout_marginBottom="@dimen/_5sdp">
+
+        <!--    about us layouts-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp">
+
+            <!--        OurHistory Layout-->
+            <RelativeLayout
+                android:id="@+id/OurHistoryLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:background="@drawable/custom_edittext_right">
+
+                <TextView
+                    android:id="@+id/OurHistory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:text="Our History"
+                    android:textColor="@color/black"
+                    android:textSize="22sp" />
+
+                <ImageView
+                    android:id="@+id/OurHistoryExpandBtn"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/down_icon" />
+
+            </RelativeLayout>
+
+<!--            OurHistoryRecycler-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/OurHistoryRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/OurHistoryLayout"
+                android:nestedScrollingEnabled="false"
+                android:visibility="gone"/>
+
+            <!--        Vision & Mission Layout-->
+            <RelativeLayout
+                android:id="@+id/VisionMissionLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_margin="@dimen/_8sdp"
+                android:background="@drawable/custom_edittext_right"
+                android:layout_below="@+id/OurHistoryRecycler">
+
+                <TextView
+                    android:id="@+id/VisionMission"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:text="@string/vision_mission"
+                    android:textColor="@color/black"
+                    android:textSize="22sp" />
+
+                <ImageView
+                    android:id="@+id/VisionMissionExpandBtn"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/down_icon" />
+
+
+            </RelativeLayout>
+
+<!--            VisionMissionRecycler-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/VisionMissionRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/VisionMissionLayout"
+                android:nestedScrollingEnabled="false"
+                android:visibility="gone"/>
+
+            <!--        Administration Layout-->
+            <RelativeLayout
+                android:id="@+id/AdministrationLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_below="@+id/VisionMissionRecycler"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:background="@drawable/custom_edittext_right">
+
+                <TextView
+                    android:id="@+id/Administration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:text="Administration"
+                    android:textColor="@color/black"
+                    android:textSize="22sp" />
+
+                <ImageView
+                    android:id="@+id/AdministrationExpandBtn"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/down_icon" />
+
+
+            </RelativeLayout>
+
+<!--            AdministrationRecycler-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/AdministrationRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/AdministrationLayout"
+                android:nestedScrollingEnabled="false"
+                android:visibility="gone"/>
+
+<!--            JCE link-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/AdministrationRecycler"
+                android:gravity="center"
+                android:layout_marginBottom="@dimen/_5sdp">
+
+                <TextView
+                    android:id="@+id/forMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="For More Please Visit:"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    />
+
+                <TextView
+                    android:id="@+id/JGILink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" JGI"
+                    android:textColor="@color/blue"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:layout_toEndOf="@id/forMore"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="@dimen/_75sdp"
+    android:padding="@dimen/_2sdp">
+
+
+    <!--    main layout-->
+    <RelativeLayout
+        android:id="@+id/main_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/_2sdp">
+
+        <!--        all layout-->
+        <RelativeLayout
+            android:id="@+id/All_Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--            pdf display-->
+            <RelativeLayout
+                android:id="@+id/pdf_display"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_6sdp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/FileImg"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:padding="@dimen/_2sdp"
+                    android:src="@drawable/note_icon" />
+
+                <TextView
+                    android:id="@+id/PDF_Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_6sdp"
+                    android:layout_toEndOf="@+id/FileImg"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="0.02"
+                    android:text="File Name"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+            <!--            Image Display-->
+            <RelativeLayout
+                android:id="@+id/img_display"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:padding="@dimen/_5sdp">
+
+                <ImageView
+                    android:id="@+id/Message_img"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="@dimen/_125sdp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/add_photo_icon"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/messageBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/main_layout">
+
+        <RelativeLayout
+            android:id="@+id/MessageDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/recevierrmessagebg"
+            android:layout_alignParentStart="true">
+
+            <!--        main layout-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/Message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:hint="Message"
+                    android:textColorHint="@color/greay"
+                    android:padding="@dimen/_8sdp"
+                    android:maxLines="4"
+                    android:inputType="textMultiLine"
+                    android:scrollHorizontally="true"/>
+            </LinearLayout>
+        </RelativeLayout>
+        <!--            date and time-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_below="@+id/MessageDisplay"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_20sdp">
+            <TextView
+                android:id="@+id/Date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:hint="Date"
+                android:textColorHint="@color/greay"
+                android:padding="@dimen/_8sdp"/>
+            <TextView
+                android:id="@+id/Time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:hint="Time"
+                android:textColorHint="@color/greay"
+                android:padding="10sp"
+                android:textAlignment="viewEnd" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

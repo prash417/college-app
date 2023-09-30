@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <!--main layout-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:targetApi="lollipop"
+        android:background="@drawable/custom_box_bg"
+        android:layout_margin="@dimen/_10sdp">
+
+        <!-- Branch layout-->
+        <RelativeLayout
+            android:id="@+id/BranchLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp">
+            <ImageView
+                android:id="@+id/BranchImg"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:src="@drawable/important_icon"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_5sdp"/>
+
+            <TextView
+                android:id="@+id/BranchText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@id/BranchImg"
+                android:hint="Branch"
+                android:padding="@dimen/_8sdp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+
+
+            <TextView
+                android:id="@+id/BranchName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@id/BranchText"
+                android:hint="Branch"
+                android:padding="@dimen/_8sdp"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+<!--        sub code layout-->
+        <RelativeLayout
+            android:id="@+id/subcodelayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_below="@+id/BranchLayout">
+            <ImageView
+                android:id="@+id/subCodeImg"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:src="@drawable/important_icon"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_5sdp"/>
+
+            <TextView
+                android:id="@+id/subCodetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@id/subCodeImg"
+                android:hint="Subject Code"
+                android:padding="@dimen/_8sdp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+
+
+            <TextView
+                android:id="@+id/SubCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@id/subCodetext"
+                android:hint="Subject Code"
+                android:padding="@dimen/_8sdp"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+<!--        sub name layout-->
+        <RelativeLayout
+            android:id="@+id/subNameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_below="@+id/subcodelayout">
+
+            <ImageView
+                android:id="@+id/subNameImg"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:src="@drawable/important_icon"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_5sdp"/>
+
+            <TextView
+                android:id="@+id/subNametext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@id/subNameImg"
+                android:hint="Subject Name"
+                android:padding="@dimen/_8sdp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+
+
+            <TextView
+                android:id="@+id/SubName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@id/subNametext"
+                android:hint="Subject Name"
+                android:padding="@dimen/_8sdp"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+
+            <!-- Delete layout-->
+            <LinearLayout
+                android:id="@+id/Account_icon_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_5sdp"
+                android:layout_below="@+id/subNameLayout"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_5sdp">
+
+
+                <!--Delete btn-->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/deleteBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:text="Delete"
+                    android:textAllCaps="false"
+                    android:textSize="18sp"
+                    app:cornerRadius="20sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    android:background="@drawable/round_bottom"/>
+
+            </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Marks.TeacherMarksDisplayActivity"
+    android:background="@color/white">
+
+
+    <!--Student usn and back btn-->
+    <RelativeLayout
+        android:id="@+id/marksDisplayText"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:background="@color/color3">
+
+        <!--  back btn-->
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_1sdp"
+            android:src="@drawable/back_arrow_icon" />
+
+        <!--Student name-->
+        <TextView
+            android:id="@+id/studentName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Student Name"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_toEndOf="@+id/backBtn"
+            android:layout_marginStart="@dimen/_5sdp"/>
+
+        <!--Student text-->
+        <TextView
+            android:id="@+id/studentUSN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Student USN"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_toEndOf="@+id/backBtn"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_below="@+id/studentName"/>
+
+        <!--Per -->
+        <TextView
+            android:id="@+id/studentPer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100%"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:background="@drawable/custom_edittext_right"
+            android:padding="@dimen/_5sdp"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <!--        student Marks display-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="SpeakableTextPresentCheck"
+        android:layout_below="@+id/marksDisplayText">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/marksRecycler"
+                android:nestedScrollingEnabled="false"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

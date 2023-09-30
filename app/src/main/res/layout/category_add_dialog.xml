@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Add Category view-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/AddCategoryView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_12sdp"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:cardElevation="@dimen/_1sdp"
+        app:cardBackgroundColor="@android:color/white">
+
+        <!-- Category Layout-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Category_Image display-->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/Category_Image"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@drawable/add_photo_icon" />
+
+            <!--Category layout-->
+            <LinearLayout
+                android:id="@+id/enp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@+id/Category_Image"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_20sdp">
+
+                <!--Category name-->
+                <EditText
+                    android:id="@+id/CategoryName"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/custom_edittext_right"
+                    android:drawableLeft="@drawable/important_icon"
+                    android:drawablePadding="@dimen/_8sdp"
+                    android:hint="Category name"
+                    android:inputType="textCapSentences"
+                    android:padding="@dimen/_8sdp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/greay" />
+
+                <!--Category name error msg-->
+                <TextView
+                    android:id="@+id/CategoryNameMsg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Category error Message"
+                    android:textColor="@color/Red"
+                    android:visibility="gone"
+                    />
+
+                <!--Category save btn-->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/CategorySaveButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/round_bottom"
+                    android:text="Save"
+                    android:textSize="18sp"
+                    android:textAllCaps="false"/>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

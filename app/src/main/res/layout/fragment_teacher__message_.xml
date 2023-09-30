@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Teacher.TeacherFragment.Teacher_Message_Fragment">
+
+    <!--    Students text and back btn-->
+    <RelativeLayout
+        android:id="@+id/StudentText"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:background="@color/color3">
+
+        <ImageView
+            android:id="@+id/hideSearchView"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:src="@drawable/back_arrow_icon"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:visibility="gone"/>
+
+            <!--Student text-->
+            <TextView
+                android:id="@+id/stdText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Students"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_toStartOf="@+id/ShowSearchView"
+                android:layout_toEndOf="@+id/hideSearchView"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:visibility="visible"/>
+            <!-- search box-->
+            <EditText
+                android:id="@+id/Search"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:hint="Search Student "
+                android:inputType="textCapSentences"
+                android:padding="@dimen/_8sdp"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textColorHint="@color/greay"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_toStartOf="@+id/ShowSearchView"
+                android:background="@null"
+                android:visibility="gone"
+                />
+
+        <ImageView
+            android:id="@+id/ShowSearchView"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="@dimen/_2sdp"
+            android:src="@drawable/student_search_icon1" />
+
+    </RelativeLayout>
+
+    <!--    list of all students-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/StudentText">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/RecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

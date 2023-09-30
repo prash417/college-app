@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Student.StudentQuiz.StudentQuizActivities.StudentQuestionActivity"
+    android:background="@color/white">
+
+    <!--    Quiz text and back btn-->
+    <RelativeLayout
+        android:id="@+id/BranchText"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:background="@color/color3">
+
+        <!--  back btn-->
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_1sdp"
+            android:src="@drawable/back_arrow_icon" />
+
+
+
+        <!--Category name text-->
+        <TextView
+            android:id="@+id/CategoryName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toEndOf="@+id/backBtn"
+            android:text="Category Name"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <!--  Timer icon-->
+        <ImageView
+            android:id="@+id/TimerIcon"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_1sdp"
+            android:src="@drawable/timer_icon"
+            android:layout_toStartOf="@+id/Timer"
+            android:layout_marginEnd="@dimen/_1sdp"/>
+
+
+        <!--Timer Text-->
+        <TextView
+            android:id="@+id/Timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="@dimen/_40sdp"
+            android:layout_toStartOf="@+id/NumberIndicator"
+            android:text="30"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <!--Question Number Text-->
+        <TextView
+            android:id="@+id/NumberIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="1/100"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_10sdp"/>
+
+
+    </RelativeLayout>
+
+<!--    Question Display-->
+    <RelativeLayout
+        android:id="@+id/QuestionDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/BranchText">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            app:cardBackgroundColor="@android:color/holo_blue_bright"
+            app:cardCornerRadius="@dimen/_15sdp">
+
+            <TextView
+                android:id="@+id/question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_20sdp"
+                android:text="Question"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+<!--    optionContainer -->
+    <RelativeLayout
+        android:id="@+id/optionContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/QuestionDisplay">
+
+<!--        option 1 display-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/option1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:background="@drawable/btn_option_back"
+            android:padding="@dimen/_8sdp"
+            android:text="Option 1"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_18sdp"
+            android:textColor="@color/black"/>
+
+        <!--        option 2 display-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/option2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/option1"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:background="@drawable/btn_option_back"
+            android:padding="@dimen/_8sdp"
+            android:text="Option 2"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_18sdp"
+            android:textColor="@color/black"/>
+
+        <!--        option 3 display-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/option3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Option 3"
+            android:textSize="@dimen/_18sdp"
+            android:padding="@dimen/_8sdp"
+            android:background="@drawable/btn_option_back"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:textAllCaps="false"
+            android:layout_below="@+id/option2"
+            android:textColor="@color/black"/>
+
+        <!--        option 4 display-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/option4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Option 4"
+            android:textSize="@dimen/_18sdp"
+            android:padding="@dimen/_8sdp"
+            android:background="@drawable/btn_option_back"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:textAllCaps="false"
+            android:layout_below="@+id/option3"
+            android:textColor="@color/black"/>
+
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnNext"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_below="@+id/optionContainer"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:background="@drawable/round_bottom"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:enabled="false"
+        android:alpha="0.3"
+        android:textSize="18sp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+</RelativeLayout>

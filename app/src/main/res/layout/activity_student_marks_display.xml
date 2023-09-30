@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Marks.StudentMarksDisplayActivity"
+    android:background="@color/white">
+
+    <!--Student usn and back btn-->
+    <RelativeLayout
+        android:id="@+id/marksDisplayText"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_38sdp"
+        android:background="@color/color3">
+
+        <!--  back btn-->
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_1sdp"
+            android:src="@drawable/back_arrow_icon" />
+
+
+        <!--Student name-->
+        <TextView
+            android:id="@+id/studentName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Student Name"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_toEndOf="@+id/backBtn"
+            android:layout_marginStart="@dimen/_5sdp"/>
+
+        <!--Student text-->
+        <TextView
+            android:id="@+id/studentUSN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Student USN"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_toEndOf="@+id/backBtn"
+            android:layout_below="@+id/studentName"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_centerVertical="true"/>
+
+
+        <!--Per -->
+        <TextView
+            android:id="@+id/studentPer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100%"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:background="@drawable/custom_edittext_right"
+            android:padding="@dimen/_5sdp"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <!--        sem number-->
+    <RelativeLayout
+        android:id="@+id/semno"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_below="@+id/marksDisplayText"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_8sdp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:hint="Semester"
+            android:textColorHint="@color/greay"
+            app:endIconMode="dropdown_menu"
+            app:endIconTint="@color/black"
+            app:startIconDrawable="@drawable/important_icon"
+            app:startIconTint="@color/black"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            android:layout_centerVertical="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
+
+            <AutoCompleteTextView
+                android:id="@+id/filled_exposed"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_edittext_right"
+                android:inputType="none"
+                android:textColor="@color/black"
+                tools:ignore="SpeakableTextPresentCheck">
+
+            </AutoCompleteTextView>
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </RelativeLayout>
+
+    <!--        semester msg-->
+    <TextView
+        android:id="@+id/semestermsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sem Message"
+        android:textSize="14sp"
+        android:textColor="@color/Red"
+        android:layout_below="@+id/semno"
+        android:layout_marginLeft="@dimen/_24sdp"
+        android:visibility="gone"/>
+
+    <!-- IA Number number-->
+    <RelativeLayout
+        android:id="@+id/IANumberLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/semestermsg"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10sdp">
+
+        <!-- IA Number number-->
+        <RelativeLayout
+            android:id="@+id/IANumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/IANumberBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:startIconDrawable="@drawable/important_icon"
+                app:startIconTint="@color/black"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:endIconMode="dropdown_menu"
+                app:endIconTint="@color/black"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                android:layout_centerVertical="true"
+                android:hint="IA Number"
+                android:textColorHint="@color/greay"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
+
+                <AutoCompleteTextView
+                    android:id="@+id/IA_filled_exposed"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_edittext_right"
+                    android:inputType="none"
+                    android:textColor="@color/black"
+                    tools:ignore="SpeakableTextPresentCheck"
+                    >
+
+                </AutoCompleteTextView>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </RelativeLayout>
+
+        <!--            IA Number Message-->
+        <TextView
+            android:id="@+id/IAmsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="IA Message"
+            android:textSize="14sp"
+            android:textColor="@color/Red"
+            android:layout_below="@+id/IANumber"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+    <!--        fetch  btn-->
+    <RelativeLayout
+        android:id="@+id/FetchNSaveBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_below="@+id/IANumberLayout">
+
+        <!--fetch button-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/fetchMBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/round_bottom"
+            android:text="Load"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </RelativeLayout>
+
+    <!--        student Marks display-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="SpeakableTextPresentCheck"
+        android:layout_below="@+id/FetchNSaveBtn"
+        android:layout_marginTop="@dimen/_5sdp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/marksRecycler"
+                android:nestedScrollingEnabled="false"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="@dimen/_140sdp"
+        android:layout_height="@dimen/_140sdp"
+        android:visibility="gone"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loading"
+        android:layout_centerInParent="true"/>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Teacher.TeacherFragment.Teacher_Account_Fragment">
+
+
+    <!--    my profile text and back btn-->
+    <RelativeLayout
+        android:id="@+id/myProfileText"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:background="@color/color3">
+
+        <!--        my profile text-->
+        <RelativeLayout
+            android:id="@+id/myProfileLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            tools:ignore="UnknownId">
+
+            <!--            my profile text-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Profile"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!--    user profile-->
+    <RelativeLayout
+        android:id="@+id/userImage"
+        android:layout_below="@id/myProfileText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--        user image display-->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:src="@drawable/account_icon"
+            app:civ_border_color="@color/bottom_bg"
+            app:civ_border_width="@dimen/_1sdp" />
+
+        <!--        animation-->
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationView"
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="@dimen/_140sdp"
+            app:lottie_rawRes="@raw/loading"
+            app:lottie_autoPlay="true"
+            android:layout_centerHorizontal="true"
+            app:lottie_loop="true"
+            android:visibility="visible"
+            android:layout_marginTop="-20dp"/>
+
+        <!--        change profile-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/changeUserImg"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_below="@id/profile_image"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/round_bottom"
+            android:text="Change Profile"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            app:cornerRadius="@dimen/_20sdp"
+            tools:ignore="TouchTargetSizeCheck" />
+
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userImage">
+
+    <!--    user data-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--        user info card view-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_15sdp"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="@dimen/_30sdp"
+            app:cardElevation="@dimen/_20sdp">
+
+            <!--        main layout-->
+            <LinearLayout
+                android:id="@+id/SInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="@dimen/_20sdp">
+
+                <!--            name layout-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_alignParentBottom="true"
+                    tools:targetApi="lollipop"
+                    android:background="@drawable/custom_box_bg">
+
+
+                    <ImageView
+                        android:id="@+id/personImg"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:src="@drawable/person_icon"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_5sdp"/>
+
+                    <TextView
+                        android:id="@+id/nametext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toEndOf="@id/personImg"
+                        android:hint="Name:"
+                        android:padding="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
+
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:layout_toEndOf="@id/nametext"
+                        android:hint="Name"
+                        android:inputType="textCapSentences"
+                        android:padding="@dimen/_8sdp"
+                        android:textAlignment="viewEnd"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="15sp"
+                        android:ellipsize="marquee"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:maxLines="1"/>
+
+                    <!--                name layout-->
+                </RelativeLayout>
+
+                <!--            email layout-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_alignParentBottom="true"
+                    tools:targetApi="lollipop"
+                    android:background="@drawable/custom_box_bg"
+                    android:layout_marginTop="@dimen/_10sdp">
+
+
+                    <ImageView
+                        android:id="@+id/EmailImage"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:src="@drawable/email_icon"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_8sdp"/>
+
+                    <TextView
+                        android:id="@+id/emailtext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toEndOf="@id/EmailImage"
+                        android:hint="Email:"
+                        android:padding="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
+
+
+                    <TextView
+                        android:id="@+id/email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:layout_toEndOf="@id/emailtext"
+                        android:ellipsize="marquee"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:maxLines="1"
+                        android:hint="Email"
+                        android:padding="@dimen/_8sdp"
+                        android:textAlignment="viewEnd"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="15sp" />
+
+                </RelativeLayout>
+
+                <!--            mobile layout-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_alignParentBottom="true"
+                    tools:targetApi="lollipop"
+                    android:background="@drawable/custom_box_bg"
+                    android:layout_marginTop="@dimen/_10sdp">
+
+
+                    <ImageView
+                        android:id="@+id/mobileImage"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:src="@drawable/phone_icon"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_8sdp"/>
+
+                    <TextView
+                        android:id="@+id/mobiletext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toEndOf="@id/mobileImage"
+                        android:hint="Mobile:"
+                        android:padding="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
+
+
+                    <TextView
+                        android:id="@+id/phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:layout_toEndOf="@id/mobiletext"
+                        android:hint="Mobile"
+                        android:padding="@dimen/_8sdp"
+                        android:textAlignment="viewEnd"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="15sp"
+                        android:ellipsize="marquee"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:maxLines="1"/>
+
+                </RelativeLayout>
+
+                <!--            Branch layout-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_alignParentBottom="true"
+                    tools:targetApi="lollipop"
+                    android:background="@drawable/custom_box_bg"
+                    android:layout_marginTop="@dimen/_10sdp">
+
+
+                    <ImageView
+                        android:id="@+id/branchImage"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:src="@drawable/important_icon"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_8sdp"/>
+
+                    <TextView
+                        android:id="@+id/branchtext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toEndOf="@id/branchImage"
+                        android:hint="Branch:"
+                        android:padding="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
+
+
+                    <TextView
+                        android:id="@+id/Userbranch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:layout_toEndOf="@id/branchtext"
+                        android:ellipsize="marquee"
+                        android:hint="Branch"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:maxLines="1"
+                        android:padding="@dimen/_8sdp"
+                        android:textAlignment="viewEnd"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="15sp" />
+
+                </RelativeLayout>
+
+                <!--                edit and logout btn-->
+                <LinearLayout
+                    android:id="@+id/icon_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:elevation="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_12sdp"
+                    android:weightSum="2"
+                    tools:targetApi="lollipop"
+                    android:layout_marginTop="@dimen/_5sdp">
+
+
+                    <!--                    logout layout-->
+                    <LinearLayout
+                        android:id="@+id/Home_icon_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_2sdp">
+
+
+                        <!--                        logout btn-->
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/logout"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_30sdp"
+                            android:text="Logout"
+                            android:textAllCaps="false"
+                            android:textSize="18sp"
+                            tools:ignore="TouchTargetSizeCheck"
+                            android:background="@drawable/round_bottom"/>
+
+                    </LinearLayout>
+
+
+                    <!--                    edit profile layout-->
+                    <LinearLayout
+                        android:id="@+id/Account_icon_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_2sdp">
+
+
+                        <!--                        edit profile btn-->
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/editProfile"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_30sdp"
+                            android:text="Edit Profile"
+                            android:textAllCaps="false"
+                            android:textSize="18sp"
+                            tools:ignore="TouchTargetSizeCheck"
+                            android:background="@drawable/round_bottom"/>
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+                <!--            change password button-->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/ChangePassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:background="@drawable/round_bottom"
+                    android:text="Change Password"
+                    android:textAllCaps="false"
+                    android:textSize="18sp"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
